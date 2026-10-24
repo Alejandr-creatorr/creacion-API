@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tienda de Cómics</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>Tienda de Cómics</h1>
+    <p>Consulta y crea autores y cómics</p>
+  </header>
+
+  <main>
+    <section class="panel">
+      <h2>Catálogo de cómics</h2>
+      <div class="filtros">
+        <label>Editorial
+          <select id="filtro-editorial"><option value="">Todas</option></select>
+        </label>
+        <label>Autor
+          <select id="filtro-autor"><option value="">Todos</option></select>
+        </label>
+      </div>
+      <div id="lista-comics" class="grid"></div>
+    </section>
+
+    <section class="panel">
+      <h2>Nuevo autor</h2>
+      <form id="form-autor">
+        <input id="autor-nombre" placeholder="Nombre" required>
+        <input id="autor-nacionalidad" placeholder="Nacionalidad">
+        <input id="autor-fecha" type="date">
+        <button type="submit">Crear autor</button>
+      </form>
+      <p id="msg-autor" class="mensaje"></p>
+    </section>
+
+    <section class="panel">
+      <h2>Nuevo cómic</h2>
+      <form id="form-comic">
+        <input id="comic-titulo" placeholder="Título" required>
+        <select id="comic-autor" required><option value="">Selecciona un autor</option></select>
+        <input id="comic-editorial" placeholder="Editorial">
+        <input id="comic-anio" type="number" placeholder="Año de publicación" min="1900">
+        <input id="comic-precio" type="number" placeholder="Precio" min="0" required>
+        <input id="comic-stock" type="number" placeholder="Stock" min="0" value="0">
+        <button type="submit">Crear cómic</button>
+      </form>
+      <p id="msg-comic" class="mensaje"></p>
+    </section>
+  </main>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>
